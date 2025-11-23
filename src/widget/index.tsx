@@ -24,7 +24,7 @@ function onReady() {
     );
 
     shadow.appendChild(shadowRoot);
-    injectStyle(shadowRoot);
+    injectStyle(shadow);
     hydrateRoot(shadowRoot, component);
 
     document.body.appendChild(element);
@@ -33,7 +33,7 @@ function onReady() {
   }
 }
 
-function injectStyle(shadowRoot: HTMLElement) {
+function injectStyle(shadow: ShadowRoot) {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   const fileName = process.env.WIDGET_NAME || 'widget';
